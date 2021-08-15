@@ -19,6 +19,10 @@
         "petsfunction": {
           "deploymentBucketName": "amplify-petsapi-dev-03417-deployment",
           "s3Key": "amplify-builds/petsfunction-36557670736477625951-build.zip"
+        },
+        "countriesapi": {
+          "deploymentBucketName": "amplify-petsapi-dev-03417-deployment",
+          "s3Key": "amplify-builds/countriesapi-63537a47356a4339355a-build.zip"
         }
       }
     }
