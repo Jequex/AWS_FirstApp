@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/users",
+      "lambdaFunction": "usersFunction",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/users"
+    }
+  ],
+  "resourceName": "userapi",
+  "apiName": "userapi",
+  "functionArns": [
+    {
+      "lambdaFunction": "usersFunction"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-petsapi-dev-03417-authRole",
+    "unAuthRoleName": "amplify-petsapi-dev-03417-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "usersFunction",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

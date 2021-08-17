@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/booking",
+      "lambdaFunction": "bookingFunction",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/booking"
+    }
+  ],
+  "resourceName": "bookingapi",
+  "apiName": "bookingapi",
+  "functionArns": [
+    {
+      "lambdaFunction": "bookingFunction"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-petsapi-dev-03417-authRole",
+    "unAuthRoleName": "amplify-petsapi-dev-03417-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "bookingFunction",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

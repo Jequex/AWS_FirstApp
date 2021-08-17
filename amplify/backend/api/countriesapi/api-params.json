@@ -1,0 +1,43 @@
+{
+    "paths": [
+        {
+            "name": "/countries",
+            "lambdaFunction": "countriesapi",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/countries"
+        }
+    ],
+    "resourceName": "countriesapi",
+    "apiName": "countriesapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "countriesapi"
+        }
+    ],
+    "privacy": {
+        "auth": 2,
+        "unauth": 0,
+        "authRoleName": "amplify-petsapi-dev-03417-authRole",
+        "unAuthRoleName": "amplify-petsapi-dev-03417-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "countriesapi",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "b050847c"
+}

@@ -1,56 +1,42 @@
-import React, { useEffect, useState } from 'react';
-import CountryForm from './forms/CountryForm';
-import PetsForm from './forms/PetsForm';
-import PetsTable from './Tables/PetsTable';
+import React, {useEffect, useState} from 'react';
+import NavBar from './components/NavBar';
+import Home from './pages/Home';
+import Booking from './pages/Booking';
+import Shipment from './pages/Shipment';
+import User from './pages/User';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import Amplify, {API} from 'aws-amplify';
 import config from './aws-exports';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 
 Amplify.configure(config);
 
 function App() {
-  const [pets, setPets] = useState([]);
-  const [countries, setCountries] = useState([]);
 
-  const petts = () => {
-    API.get('petsapi', '/pets/name').then(
-      petRes => { console.log(petRes); setPets([...petRes]) }
-    );
-  };
-
-  const countrys = () => {
-    API.get('countriesapi', '/countries/countrycode').then(
-      countryRes => { console.log(countryRes); setCountries([...countryRes]) }
-    );
-  };
+  const [app, setApp] = useState({ loading:true, users: '' });
 
   useEffect(() => {
-    petts();
-    countrys();
-    //eslint-disable-next-line
-  }, []);
-
+    API.get('userapi', '/users/firstname').then(
+      res => {
+        console.log(res);
+        setApp({...app, users: res, loading: false });
+      }
+    )
+  }, [])
+  
 
   return (
-    <div className="App">
-      <header className="App-header">
-
-        Hello
-
-        <br />
-
-
-        <CountryForm />
-        <PetsForm />
-
-        <br />
-
-        <PetsTable pets={pets} />
-
-        <AmplifySignOut />
-
-      </header>
+    <div>
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/shipment' component={Shipment} />
+          <Route path='/booking' component={() => <Booking users={app.users} />} />
+          <Route path='/user' component={() => <User app={app}/>} />
+        </Switch>
+      </Router>
     </div>
   );
 }

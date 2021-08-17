@@ -2,19 +2,48 @@
   text-align: center;
 }
 
+.App-page{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+.App-navbar{
+  background-color: #81bde0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 1rem;
+}
+
+.App-navbar a{
+  color: rgb(255, 255, 255);
+  padding-left: 2rem;
+  text-decoration: none;
+}
+
+.App-form{
+  border: 2px black solid;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 40vw;
+}
+
+.App-table{
+  display: flex;
+  color: #3e3f3f;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

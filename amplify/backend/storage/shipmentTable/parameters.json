@@ -1,0 +1,5 @@
+{
+    "tableName": "shipmentTable",
+    "partitionKeyName": "date",
+    "partitionKeyType": "S"
+}

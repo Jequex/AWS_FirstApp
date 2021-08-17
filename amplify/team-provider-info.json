@@ -22,7 +22,19 @@
         },
         "countriesapi": {
           "deploymentBucketName": "amplify-petsapi-dev-03417-deployment",
-          "s3Key": "amplify-builds/countriesapi-63537a47356a4339355a-build.zip"
+          "s3Key": "amplify-builds/countriesapi-2f696f737a7a67373652-build.zip"
+        },
+        "shipmentFunction": {
+          "deploymentBucketName": "amplify-petsapi-dev-03417-deployment",
+          "s3Key": "amplify-builds/shipmentFunction-52397663464f4852396c-build.zip"
+        },
+        "usersFunction": {
+          "deploymentBucketName": "amplify-petsapi-dev-03417-deployment",
+          "s3Key": "amplify-builds/usersFunction-6f2f674c74646849676e-build.zip"
+        },
+        "bookingFunction": {
+          "deploymentBucketName": "amplify-petsapi-dev-03417-deployment",
+          "s3Key": "amplify-builds/bookingFunction-5779525847654d48446a-build.zip"
         }
       }
     }

@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/shipment",
+      "lambdaFunction": "shipmentFunction",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/shipment"
+    }
+  ],
+  "resourceName": "shipmentapi",
+  "apiName": "shipmentapi",
+  "functionArns": [
+    {
+      "lambdaFunction": "shipmentFunction"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-petsapi-dev-03417-authRole",
+    "unAuthRoleName": "amplify-petsapi-dev-03417-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "shipmentFunction",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}
